@@ -1,0 +1,19 @@
+.recording {
+    background-color: #42686b;
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color {
+    0% {
+        background-color: #42686b;
+    }
+    50% {
+        background-color: #a63a3e;
+        border-color: #a63a3e;
+    }
+    100% {
+        background-color: #42686b;
+    }
+}
