@@ -1,9 +1,15 @@
 {
   "name": "FL Request Sounder",
   "description": "Simple FL API request & response sniffer.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "manifest_version": 2,
-  "permissions": [],
+  "permissions": ["downloads"],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
   "content_scripts": [
     {
       "matches": [
