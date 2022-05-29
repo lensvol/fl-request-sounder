@@ -12,27 +12,35 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.fallenlondon.com/*"
+        "https://*.fallenlondon.com/*"
       ],
       "js": [
         "content.js"
       ],
+      "css": [],
       "run_at": "document_start"
     }
   ],
   "action": {
     "default_icon": {
-      "16": "/images/fl-mystery-sorter-icon-16.png",
-      "32": "/images/fl-mystery-sorter-icon-32.png",
-      "48": "/images/fl-mystery-sorter-icon-48.png",
-      "128": "/images/fl-mystery-sorter-icon-128.png"
+      "16": "/images/fl-request-sounder-icon-16.png",
+      "32": "/images/fl-request-sounder-icon-32.png",
+      "48": "/images/fl-request-sounder-icon-48.png",
+      "128": "/images/fl-request-sounder-icon-128.png"
     }
   },
   "icons": {
-    "16": "/images/fl-mystery-sorter-icon-16.png",
-    "32": "/images/fl-mystery-sorter-icon-32.png",
-    "48": "/images/fl-mystery-sorter-icon-48.png",
-    "128": "/images/fl-mystery-sorter-icon-128.png"
+    "16": "/images/fl-request-sounder-icon-16.png",
+    "32": "/images/fl-request-sounder-icon-32.png",
+    "48": "/images/fl-request-sounder-icon-48.png",
+    "128": "/images/fl-request-sounder-icon-128.png"
   },
-  "web_accessible_resources": []
+  "web_accessible_resources": [{
+    "resources": [
+      "inject.js"
+    ],
+    "matches": [
+      "https://*.fallenlondon.com/*"
+    ]
+  }]
 }
