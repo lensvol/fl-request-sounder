@@ -16,7 +16,7 @@ function debug(message) {
 }
 
 function jwtReplacer(name, val) {
-    if (name === "jwt") {
+    if (name === "jwt" || name === "emailAddress") {
         return "<DATA REDACTED>";
     }
 
