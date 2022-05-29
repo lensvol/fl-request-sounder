@@ -4,7 +4,8 @@
 
 ![screenshot](https://raw.githubusercontent.com/lensvol/fl-request-sounder/master/screenshot.png)
 
-Simple browser extension for [Fallen London](https://www.fallenlondon.com/) to display "Mystery of ... City" in the ascending order.
+
+Simple browser extension for [Fallen London](https://www.fallenlondon.com/) to record "Fallen London" API requests and responses.
 
 _NB: This extension is **not** yet whitelisted by Failbetter Games. Use at your own risk!_ 
 
