@@ -2,6 +2,30 @@
     const EXTENSION_NAME = "FL Request Sounder";
     const DONE = 4;
 
+    let previousMessages = null;
+
+    /*
+    Taken with alterations from
+    https://stackoverflow.com/questions/48728515/deep-compare-javascript-function
+    */
+    function deepEqual(a, b) {
+        if (a && b && typeof a == 'object' && typeof b == 'object') {
+            if (Object.keys(a).length !== Object.keys(b).length) return false;
+            for (const key in a) {
+                // "ago" field is being recomputed each time you make a request
+                // to /messages, so straight-up comparison will always fail
+                // even on the identical set of messages.
+                if (key === "ago") {
+                    continue;
+                }
+
+                if (!deepEqual(a[key], b[key]))
+                    return false;
+            }
+            return true;
+        } else return a === b
+    }
+
     let isRecording = false;
     const recordToggle = createRecordToggleButton();
 
@@ -66,13 +90,23 @@
             return;
         }
 
+        const responseJson = JSON.parse(response.currentTarget.responseText);
+
+        if (this._targetUrl.endsWith("/messages")) {
+            if (deepEqual(previousMessages, responseJson)) {
+                return;
+            }
+
+            previousMessages = responseJson;
+        }
+
         const record = {
             method: this._requestMethod,
             url: this._targetUrl,
             timestamp: this._timestamp.getTime(),
             request: structuredClone(this._originalRequest),
             status: response.currentTarget.status,
-            response: JSON.parse(response.currentTarget.responseText),
+            response: responseJson,
         }
 
         appendToRecording(record);
