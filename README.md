@@ -7,6 +7,8 @@
 
 Simple browser extension for [Fallen London](https://www.fallenlondon.com/) to record "Fallen London" API requests and responses.
 
+The resulting recordings can by analyzed with [fl-log-analyzer](https://github.com/kkotenko/fl-log-analyzer).
+
 _NB: This extension is **not** yet whitelisted by Failbetter Games. Use at your own risk!_ 
 
 Grab it here:
