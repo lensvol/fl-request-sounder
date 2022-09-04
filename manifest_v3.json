@@ -1,7 +1,7 @@
 {
-  "name": "FL Response Sounder",
+  "name": "FL Request Sounder",
   "description": "Simple FL API request & response sniffer.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 3,
   "host_permissions": [
       "https://www.fallenlondon.com/*"
