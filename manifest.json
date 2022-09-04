@@ -1,13 +1,13 @@
 {
-  "name": "FL Response Sounder",
+  "name": "FL Request Sounder",
   "description": "Simple FL API request & response sniffer.",
   "version": "1.2.0",
-  "manifest_version": 3,
-  "host_permissions": [
-      "https://www.fallenlondon.com/*"
-  ],
+  "manifest_version": 2,
   "background": {
-    "service_worker": "background.js"
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -21,7 +21,7 @@
       "run_at": "document_start"
     }
   ],
-  "action": {
+  "browser_action": {
     "default_icon": {
       "16": "/images/fl-request-sounder-icon-16.png",
       "32": "/images/fl-request-sounder-icon-32.png",
@@ -35,12 +35,7 @@
     "48": "/images/fl-request-sounder-icon-48.png",
     "128": "/images/fl-request-sounder-icon-128.png"
   },
-  "web_accessible_resources": [{
-    "resources": [
+  "web_accessible_resources": [
       "inject.js"
-    ],
-    "matches": [
-      "https://*.fallenlondon.com/*"
-    ]
-  }]
+  ]
 }
