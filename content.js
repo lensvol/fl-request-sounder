@@ -97,3 +97,11 @@ window.addEventListener("FL_RS_finishRecording", (event) => {
         saveToFileInFirefox(recordedData);
     }
 });
+
+window.addEventListener("beforeunload", (e) => {
+    if (recordingStart != null) {
+        e.preventDefault();
+        e.returnValue = "You sure?";
+        return "Boo!";
+    }
+});
