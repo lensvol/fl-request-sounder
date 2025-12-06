@@ -6,6 +6,9 @@
   "host_permissions": [
       "https://www.fallenlondon.com/*"
   ],
+  "permissions": [
+    "downloads"
+  ],
   "background": {
     "service_worker": "background.js"
   },

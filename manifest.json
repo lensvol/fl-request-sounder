@@ -3,6 +3,9 @@
   "description": "Simple FL API request & response sniffer.",
   "version": "1.2.1",
   "manifest_version": 2,
+  "permissions": [
+    "downloads"
+  ],
   "background": {
     "scripts": [
       "background.js"
