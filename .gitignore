@@ -1,0 +1,6 @@
+*.mp3
+.idea
+node_modules
+dist
+*.map
+.DS_Store
